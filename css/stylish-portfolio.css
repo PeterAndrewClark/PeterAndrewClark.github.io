@@ -413,3 +413,21 @@ a:hover, a:focus, a:active {
     opacity: 0;
   }
 }
+
+.scrolly a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scrolly a:hover {
+  opacity: .5;
+}
