@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: 'Roboto Slab',serif;
 }
 
 .btn-xl {
@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: 'Lato',sans-serif;
 }
 
 .text-faded {
@@ -127,7 +127,7 @@ h6 {
   height: 100%;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: #1D809F;
+  background: #EFEFEF;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -143,13 +143,13 @@ h6 {
 .sidebar-nav li.sidebar-nav-item a {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #959494;
   padding: 15px;
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #fff;
+  color: #C1C1C1;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -190,18 +190,19 @@ h6 {
   width: 50px;
   height: 50px;
   text-align: center;
-  color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+  color: #000;
+  /* background: rgba(52, 58, 64, 0.5); */
   line-height: 50px;
   z-index: 999;
 }
 
 .menu-toggle:focus, .menu-toggle:hover {
-  color: #fff;
+  color: #e1e1e1;
 }
 
 .menu-toggle:hover {
-  background: #343a40;
+  /* background: #343a40; */
+  color: rgba(52, 58, 64, 0.5)
 }
 
 .service-icon {
@@ -430,4 +431,54 @@ a:hover, a:focus, a:active {
 }
 .scrolly a:hover {
   opacity: .5;
+}
+
+/* Custom animation on the text */
+@-moz-keyframes 
+fade-it { 0% {
+opacity:0
+}
+100% {
+opacity:1
+}
+}
+
+@-webkit-keyframes 
+fade-it { 0% {
+opacity:0
+}
+100% {
+opacity:1
+}
+}
+
+@keyframes 
+fade-it { 0% {
+opacity:0
+}
+100% {
+opacity:1
+}
+}
+
+.js-fade-in-verb {
+  animation-name: fade-it;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fade-it;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards
+}
+
+.verb.js-block { display: inline-block }
+
+.verb.js-hide {
+  display: none;
+  opacity: 0
+}
+
+.verb {
+  display: inline-block;
+  visibility: visible;
+  border-bottom: 1px dotted;
 }
