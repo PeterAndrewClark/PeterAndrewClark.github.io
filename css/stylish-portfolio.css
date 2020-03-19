@@ -375,7 +375,7 @@ a:hover, a:focus, a:active {
 }
 #section06 a span {
   position: absolute;
-  top: 0;
+  bottom: 15%;
   left: 50%;
   width: 24px;
   height: 24px;

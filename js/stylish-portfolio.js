@@ -71,7 +71,7 @@ var words = (function(){
       'Growth',
       'Brand',
       'Content',
-      'Social Media',
+      'Social-media',
       'Traditional',
       'Data-driven',
       'Automated'
