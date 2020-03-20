@@ -74,13 +74,13 @@ var words = (function(){
       'Social-media',
       'Traditional',
       'Data-driven',
-      'Automated'
+      'Creative'
       ],
     el = document.querySelector('.verb'),
     currentIndex,
     currentWord,
     prevWord,
-    duration = 1000;
+    duration = 1700;
 
   var _getIndex = function(max, min){
     currentIndex = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -144,3 +144,44 @@ var words = (function(){
 })();
 
 words.init();
+
+
+// Fun with Cookies
+// Parse the URL
+
+const queryStr = window.location.search.split("?")
+    const queryParams = {}
+    if (queryStr && queryStr.length > 1) {
+      let queryParamsArr = queryStr[1].split("&");
+      if (queryParamsArr && queryParamsArr.length > 0) {
+        queryParamsArr.forEach((p) => {
+          queryParams[p.split("=")[0]] = decodeURIComponent(p.split("=")[1]);
+        });
+      }
+    }
+
+var source = queryParams['utm_source'];
+var medium = queryParams['utm_medium'];
+var campaign = queryParams['utm_campaign'];
+var term = queryParams['utm_term'];
+var content = queryParams['utm_content'];
+
+if (Cookies.get('source_first')) {
+
+Cookies.set('source_last', source, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('medium_last', medium, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('campaign_last', campaign, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('term_last', term, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('content_last', content, {expires:365,domain:'peterandrewclark.github.io'});
+
+	} else {
+		console.log(Cookies)
+Cookies.set('source_first', source, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('medium_first', medium, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('campaign_first', campaign, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('term_first', term, {expires:365,domain:'peterandrewclark.github.io'});
+Cookies.set('content_first', content, {expires:365,domain:'peterandrewclark.github.io'});
+
+	}
+
+
