@@ -166,22 +166,169 @@ var campaign = queryParams['utm_campaign'];
 var term = queryParams['utm_term'];
 var content = queryParams['utm_content'];
 
-if (Cookies.get('source_first')) {
-
-Cookies.set('source_last', source, {expires:365,domain:'peterandrewclark.github.io'});
-Cookies.set('medium_last', medium, {expires:365,domain:'peterandrewclark.github.io'});
-Cookies.set('campaign_last', campaign, {expires:365,domain:'peterandrewclark.github.io'});
-Cookies.set('term_last', term, {expires:365,domain:'peterandrewclark.github.io'});
-Cookies.set('content_last', content, {expires:365,domain:'peterandrewclark.github.io'});
-
-	} else {
-		console.log(Cookies)
 Cookies.set('source_first', source, {expires:365,domain:'peterandrewclark.github.io'});
 Cookies.set('medium_first', medium, {expires:365,domain:'peterandrewclark.github.io'});
 Cookies.set('campaign_first', campaign, {expires:365,domain:'peterandrewclark.github.io'});
 Cookies.set('term_first', term, {expires:365,domain:'peterandrewclark.github.io'});
 Cookies.set('content_first', content, {expires:365,domain:'peterandrewclark.github.io'});
 
-	}
+
+//Fun with Location Data
+$(function() {
+  $.ajax({
+    url: "https://geolocation-db.com/json/",
+    dataType: "json",
+    success: function( location ) {
+      var GeoCode = location.country_name;
+      var IpCode = location.IPv4;
+      var StateCode = location.state;  
+	  var CityCode = location.city;
+	  var PostalCode = location.postal; 	  
+      $('#country').append(GeoCode);
+      $('#00Nf400000UloIr').append(IpCode);
+      $('#state').append(StateCode);
+	  $('#city').append(CityCode);
+	  $('#postal').append(PostalCode);
+      
+	  
+	  var firsturl = "https://maps.google.com/maps?q=";
+	  var lasturl = "\&output\=embed";
+	  
+	  var ifrm = document.createElement('iframe');
+	  ifrm.setAttribute('id','ifrm'); //This is hte iframe ID
+	  
+	  var el = document.getElementById('mapclass');
+	  el.parentNode.appendChild(ifrm, el);
+	  
+	  ifrm.setAttribute('src', firsturl + PostalCode + lasturl)
+	  //; 'frameborder', "0";'width', "100%";'height',"100%";'scrolling',"no";'marginheight',"0";'marginwidth',"0");
+	  
+	 
+    }
+  }); 
+}); 
+
+
+//Javascript that inserts the URL for the google map based on the GEO zip code returned
+
+function enterZip() {
+	var firsturl = "https://maps.google.com/maps?q="
+	var lasturl = ";output=embed"
+	
+	string.concat(firsturl,PostalCode,lasturl);
+}
+
+
+//Fun with Particles
+particlesJS("particles-js",{
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#cdcdcd"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#cdcdcd",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
 
 

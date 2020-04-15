@@ -97,11 +97,20 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: white;
+  background:white;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.bg-light{
+	background: #E1E1E1;
+}
+
+.bg-primary{
+	background: #FFF;
+}
+
 
 .masthead h1 {
   font-size: 4rem;
@@ -368,7 +377,7 @@ a:hover, a:focus, a:active {
 }
 
 .bg-primary {
-  background-color: #1D809F !important;
+  background-color: #FFF !important;
 }
 
 .text-primary {
@@ -491,4 +500,17 @@ opacity:1
   display: inline-block;
   visibility: visible;
   border-bottom: 1px dotted;
+}
+
+/* Particle stylings */
+canvas {
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#mapclass{
+	float:right;
+	max-width:50%;
+	position:relative;
 }
