@@ -16,6 +16,7 @@ html {
 
 body {
   font-family: 'Roboto Slab',serif;
+  background: rgba(167, 210, 255, .3) !important;
 }
 
 .btn-xl {
@@ -97,7 +98,7 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background:white;
+ backgound:rgba(114, 164, 216, .6) !important;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -513,4 +514,18 @@ canvas {
 	float:right;
 	max-width:50%;
 	position:relative;
+}
+
+/*Styling for the Logo areas*/
+.logos{
+	max-width:50px;
+	padding:10px;
+}
+
+.col-lg-6{
+	max-height:360px;
+}
+
+.social-link{
+	background-color:#e9e9e9 !important;
 }
